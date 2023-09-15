@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw2f32854wcbn"]
-
-[ext_resource type="PackedScene" uid="uid://uqa8135ynlji" path="res://models/raygun/stylized_gun.glb" id="1_2kkr6"]
-
-[node name="stylized_gun" instance=ExtResource("1_2kkr6")]
-
-[node name="Sketchfab_model" parent="." index="0"]
-transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0, 0, 0)

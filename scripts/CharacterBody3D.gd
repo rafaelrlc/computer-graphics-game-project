@@ -41,7 +41,6 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# jump.
 	if Input.is_action_just_pressed("SPACE") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
@@ -53,6 +52,7 @@ func _physics_process(delta):
 
 	var input_dir = Input.get_vector("A", "D", "W", "S")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	print(head.transform.basis)
 	if is_on_floor():
 		if direction:
 			velocity.x = direction.x * speed

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1ms027ag00dh"
-path.s3tc="res://.godot/imported/stylized_gun_2.png-6d3dcfacd1fa491a135ba74d89c6b8c3.s3tc.ctex"
+uid="uid://dh8b2xgdn3jlv"
+path.s3tc="res://.godot/imported/lampada_0.png-1c2f4ba7e5b3f55e185f272e2d6fd296.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://models/raygun/stylized_gun_2.png"
-dest_files=["res://.godot/imported/stylized_gun_2.png-6d3dcfacd1fa491a135ba74d89c6b8c3.s3tc.ctex"]
+source_file="res://models/lampada-teto/lampada_0.png"
+dest_files=["res://.godot/imported/lampada_0.png-1c2f4ba7e5b3f55e185f272e2d6fd296.s3tc.ctex"]
 
 [params]
 

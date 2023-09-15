@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccgmr3xy35w3e"]
+[gd_scene load_steps=9 format=3 uid="uid://ccgmr3xy35w3e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tsrbl"]
 resource_name = "Metal"
@@ -99,9 +99,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_205c6")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_as5g2"]
+albedo_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gu3du"]
 emission_enabled = true
-emission = Color(1, 1, 0.52549, 1)
+emission = Color(0.960784, 0.972549, 0.247059, 1)
 emission_energy_multiplier = 3.6
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yr0ud"]
@@ -113,7 +116,7 @@ transform = Transform3D(0.2, 0, 0, 0, -0.2, 3.01992e-08, 0, -3.01992e-08, -0.2, 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.397092, 0, 0, 0, 0.397092, 3.55271e-15, 0, -3.55271e-15, 0.397092, 0, 1.36232, 1.49012e-08)
 mesh = SubResource("ArrayMesh_ebtey")
-skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_as5g2")
 surface_material_override/2 = SubResource("StandardMaterial3D_gu3du")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

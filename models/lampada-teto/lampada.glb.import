@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://uqa8135ynlji"
-path="res://.godot/imported/stylized_gun.glb-ba1497e936dafdebb144f911a704418d.scn"
+uid="uid://c0464c1pnrb2a"
+path="res://.godot/imported/lampada.glb-4e70f85c518fa27850b2055c718c6439.scn"
 
 [deps]
 
-source_file="res://models/raygun/stylized_gun.glb"
-dest_files=["res://.godot/imported/stylized_gun.glb-ba1497e936dafdebb144f911a704418d.scn"]
+source_file="res://models/lampada-teto/lampada.glb"
+dest_files=["res://.godot/imported/lampada.glb-4e70f85c518fa27850b2055c718c6439.scn"]
 
 [params]
 
