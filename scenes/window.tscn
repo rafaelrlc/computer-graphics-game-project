@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://danqla7n5x7ao"]
+
+[ext_resource type="PackedScene" uid="uid://bhy4kftj4pl3d" path="res://scenes/window.glb" id="1_5ox7w"]
+
+[node name="window" instance=ExtResource("1_5ox7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95864, 0, 3.66086)
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="instance_0" parent="Sketchfab_model/Collada visual scene group/SketchUp" index="2"]
+transform = Transform3D(-0.866025, 0.499642, -3.5986e-30, -0.5, -0.865405, -3.21487e-30, -4.73316e-30, -9.86076e-31, 0.998047, -5.58102, 23.0833, 14.5669)
+
+[node name="Material27" parent="Sketchfab_model/Collada visual scene group/SketchUp/instance_0/Ventana_sala/group_4/group_6" index="1"]
+transform = Transform3D(0.01, 0, 0, 2.98023e-10, 0, 0, 0, 0, 0, 1.19142, 25.036, 1.48178)
+
+[node name="Material259" parent="Sketchfab_model/Collada visual scene group/SketchUp/instance_0/Ventana_sala/group_22/group_24/group_30" index="1"]
+transform = Transform3D(0.01, -2.98023e-10, 0, 2.98023e-10, 0.01, 0, 0, 0, 0.01, 1.98313, 47.9277, 1.57132)

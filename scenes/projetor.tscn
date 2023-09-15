@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://b44p1l53trcrn"]
+
+[ext_resource type="PackedScene" uid="uid://bj0x7egxd0cpv" path="res://scenes/projetor.glb" id="1_ni25j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qgpy1"]
+
+[sub_resource type="Gradient" id="Gradient_w2wyv"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_totc4"]
+gradient = SubResource("Gradient_w2wyv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d7lu"]
+albedo_color = Color(0.698039, 0.721569, 0.721569, 1)
+metallic = 0.25
+metallic_specular = 1.0
+metallic_texture = SubResource("GradientTexture2D_totc4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ag38t"]
+albedo_color = Color(0.796078, 0.929412, 0.741176, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30hwt"]
+albedo_color = Color(0.643137, 0.643137, 0.643137, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_acysg"]
+albedo_color = Color(0.945098, 0.94902, 0.980392, 1)
+metallic = 0.5
+
+[node name="projetor" instance=ExtResource("1_ni25j")]
+
+[node name="adjustment" parent="Beamer_timco/adjustment" index="0"]
+transform = Transform3D(1, 0, -1.42109e-14, 2.98023e-08, 1, 2.84217e-14, 0, 1.42109e-14, 1, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_qgpy1")
+
+[node name="case_0" parent="Beamer_timco" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1d7lu")
+
+[node name="connector_ring" parent="Beamer_timco/Connectors/Connector_1" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ag38t")
+
+[node name="lens_case" parent="Beamer_timco/lens" index="0"]
+visible = false
+
+[node name="lens_galss" parent="Beamer_timco/lens" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_30hwt")
+
+[node name="lens_ring" parent="Beamer_timco/lens" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_acysg")

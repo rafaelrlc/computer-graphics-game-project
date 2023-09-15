@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dknqsvseio72l"
+path="res://.godot/imported/sandali pelastici___MAX.obj-bd0bce573ca38a6ba9d61d02c8a1874b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/sandali pelastici___MAX.obj-bd0bce573ca38a6ba9d61d02c8a1874b.mesh"]
+
+source_file="res://sandali pelastici___MAX.obj"
+dest_files=["res://.godot/imported/sandali pelastici___MAX.obj-bd0bce573ca38a6ba9d61d02c8a1874b.mesh", "res://.godot/imported/sandali pelastici___MAX.obj-bd0bce573ca38a6ba9d61d02c8a1874b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

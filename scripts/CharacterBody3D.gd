@@ -1,14 +1,19 @@
 extends CharacterBody3D
 
+var speed
+const WALK_SPEED = 5.0
+const SPRINT_SPEED = 8.0
+const JUMP_VELOCITY = 3
+const SENSITIVITY = 0.004
 
-const DEFAULT_SPEED = 7.5
-const RUNNING_SPEED = 11.0
-const JUMP_VELOCITY = 3.5
-const SENSITIVITY = 0.001
+
+const freq = 2.4
+const ampli = 0.059
+var t_bob = 0.0
 
 var gravity = 10
 
-@onready var neck = $Neck
+@onready var head = $Neck
 @onready var camera = $Neck/Camera3D
 
 
@@ -16,50 +21,57 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(event):
+	
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion:
-			neck.rotate_y(-event.relative.x * SENSITIVITY)
-			camera.rotate_x(-event.relative.y * SENSITIVITY)
-			
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+	if event is InputEventMouseMotion:
+		head.rotate_y(-event.relative.x * SENSITIVITY)
+		camera.rotate_x(-event.relative.y * SENSITIVITY)
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta):
 	
-	var SPEED = DEFAULT_SPEED
-	
-	if Input.is_action_pressed("RUN"):
-		SPEED = RUNNING_SPEED
-
-	
+	# gravidade
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
+	# jump.
 	if Input.is_action_just_pressed("SPACE") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	
+	# correr.
+	if Input.is_action_pressed("RUN"):
+		speed = SPRINT_SPEED
+	else:
+		speed = WALK_SPEED
 
-	var input_dir := Input.get_vector("A", "D", "W", "S")
-	# get_vector recebe no R2 (x,y)
-	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
-	#print(neck.transform.basis)
-	#print(Vector3(input_dir.x, 0, input_dir.y))
-	#print(direction)
-	
+	var input_dir = Input.get_vector("A", "D", "W", "S")
+	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor():
 		if direction:
-			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
 		else:
-			velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 7.0)
-			velocity.z = lerp(velocity.z, direction.z * SPEED, delta * 7.0)
+			velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
+			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
 	else:
-		velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 2.0)
-		velocity.z = lerp(velocity.z, direction.z * SPEED, delta * 2.0)
-
+		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
+		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
+	
+	
+	
+	t_bob += delta * velocity.length() * float(is_on_floor())
+	camera.transform.origin = _headbob(t_bob)
+	
 	move_and_slide()
+
+
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * freq) * ampli
+	pos.x = cos(time * freq / 2) * ampli
+	return pos
