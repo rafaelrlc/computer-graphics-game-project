@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://vedwllxyqyq2"]
+
+[ext_resource type="PackedScene" uid="uid://scox78k4mx6e" path="res://monitor1.glb" id="1_055to"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ys05"]
+albedo_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
+metallic = 0.3
+roughness = 0.3
+
+[node name="monitor1" instance=ExtResource("1_055to")]
+
+[node name="Plane001" parent="." index="0"]
+visible = false
+
+[node name="Object001" parent="Group001" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2ys05")

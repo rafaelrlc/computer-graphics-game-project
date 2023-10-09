@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b6e7ot74qlel7"]
+
+[node name="Corredor" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.829556, 0)
+size = Vector3(3.18501, 0.0565846, 9.29893)

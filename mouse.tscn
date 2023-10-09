@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://4tqw5ho6dyqc"]
+
+[ext_resource type="PackedScene" uid="uid://cx0o4873w4usd" path="res://mouse.glb" id="1_ufkno"]
+
+[node name="mouse" instance=ExtResource("1_ufkno")]
+
+[node name="side_boolean" parent="." index="9"]
+visible = false
+
+[node name="top_boolean" parent="." index="10"]
+visible = false

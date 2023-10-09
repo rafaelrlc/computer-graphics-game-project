@@ -1,22 +1,27 @@
-[gd_scene load_steps=26 format=3 uid="uid://dus388ti374ak"]
+[gd_scene load_steps=29 format=3 uid="uid://dus388ti374ak"]
 
 [ext_resource type="Texture2D" uid="uid://dlq6a7ht43of" path="res://textures/gray-wall-textures-background.jpg" id="1_bvevu"]
 [ext_resource type="PackedScene" uid="uid://ceyllv1jeku8r" path="res://scenes/ar_condicionado.tscn" id="2_1mdwf"]
-[ext_resource type="PackedScene" uid="uid://ccgmr3xy35w3e" path="res://scenes/lamp.tscn" id="2_o0wtd"]
+[ext_resource type="PackedScene" uid="uid://ccgmr3xy35w3e" path="res://scenes/lampada.tscn" id="2_o0wtd"]
 [ext_resource type="Texture2D" uid="uid://b1pq7ofbt2ky3" path="res://textures/imageedit_2_6097415317.jpg" id="2_x3qie"]
 [ext_resource type="PackedScene" uid="uid://danqla7n5x7ao" path="res://scenes/window.tscn" id="5_curi5"]
 [ext_resource type="PackedScene" uid="uid://bi305kwtvl1kc" path="res://models/sabao/soap_dispenser.glb" id="5_i45d6"]
 [ext_resource type="PackedScene" uid="uid://lk0w31rd3lq4" path="res://scenes/cadeiramodelage.tscn" id="6_3hh5g"]
 [ext_resource type="PackedScene" uid="uid://b44p1l53trcrn" path="res://scenes/projetor.tscn" id="6_ughcj"]
-[ext_resource type="PackedScene" uid="uid://b20cshwtrmli8" path="res://scenes/marcionao2.tscn" id="8_bxvnv"]
+[ext_resource type="Texture2D" uid="uid://d1f6j1y6esuu0" path="res://textures/branco_brilha.jpg" id="9_36frm"]
+[ext_resource type="PackedScene" uid="uid://qq3ranwykr0e" path="res://MacBookPro_blend.glb" id="9_phn75"]
+[ext_resource type="PackedScene" uid="uid://bq8y7piafu6gy" path="res://chair_finish.tscn" id="10_wm37a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bw1k3"]
 albedo_texture = ExtResource("1_bvevu")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80lo2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4sg5"]
 albedo_texture = ExtResource("1_bvevu")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4sg5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajlki"]
+albedo_texture = ExtResource("2_x3qie")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80lo2"]
 albedo_texture = ExtResource("1_bvevu")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flqf4"]
@@ -24,6 +29,8 @@ albedo_texture = ExtResource("1_bvevu")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jl3wf"]
 albedo_texture = ExtResource("2_x3qie")
+metallic = 0.15
+roughness = 0.31
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6rkw"]
@@ -46,17 +53,25 @@ albedo_color = Color(0.921569, 0.917647, 0.980392, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iq4kw"]
 albedo_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_436ii"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjcc3"]
 albedo_color = Color(0.972549, 0.984314, 0.921569, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmlns"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fexcl"]
 albedo_color = Color(0.976471, 0.980392, 0.929412, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qs3vs"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8v2vy"]
 albedo_color = Color(0.976471, 0.984314, 0.913725, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6v3v6"]
-albedo_color = Color(0.976471, 0.980392, 0.929412, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bpng"]
+albedo_color = Color(0.992157, 0.980392, 0.968627, 1)
+albedo_texture = ExtResource("9_36frm")
+metallic = 0.11
+metallic_specular = 1.0
+roughness = 0.3
+roughness_texture = ExtResource("9_36frm")
+uv1_triplanar_sharpness = 1.6245
+uv2_triplanar = true
+uv2_triplanar_sharpness = 1.41421
 
 [node name="Sala de Aula" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19721, 0)
@@ -69,23 +84,49 @@ use_collision = true
 size = Vector3(15.8802, 5.58629, 0.5)
 material = SubResource("StandardMaterial3D_bw1k3")
 
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Paredes"]
+
+[node name="Sala de Aula3" type="CSGBox3D" parent="Paredes/CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.73031, -0.415333, 8.2617)
+use_collision = true
+size = Vector3(16, 5.5, 0.5)
+material = SubResource("StandardMaterial3D_d4sg5")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Paredes/CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.8598, -1.08999, 2.7044)
+operation = 2
+size = Vector3(2.73622, 4.15502, 1)
+material = SubResource("StandardMaterial3D_ajlki")
+
 [node name="Sala de Aula4" type="CSGBox3D" parent="Paredes"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.72466, 1.89707, 8.33804)
 use_collision = true
 size = Vector3(16.007, 0.912665, 0.5)
 material = SubResource("StandardMaterial3D_80lo2")
 
-[node name="Janela" type="CSGBox3D" parent="Paredes"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.74337, -2.06792, 8.26643)
+[node name="Janela" type="CSGBox3D" parent="Paredes/Sala de Aula4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0716105, -3.96499, 0.0187101)
 use_collision = true
 size = Vector3(16.0363, 2.32631, 0.5)
 material = SubResource("StandardMaterial3D_80lo2")
 
-[node name="Sala de Aula3" type="CSGBox3D" parent="Paredes"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.73031, -0.415333, 8.2617)
-use_collision = true
-size = Vector3(16, 5.5, 0.5)
-material = SubResource("StandardMaterial3D_d4sg5")
+[node name="janela" parent="Paredes/Sala de Aula4" instance=ExtResource("5_curi5")]
+transform = Transform3D(-0.0245, 0, -0.0424352, 0, 0.049, 0, 0.0424352, 0, -0.0245, 5.91534, -3.52095, -0.331049)
+
+[node name="1" parent="Paredes/Sala de Aula4/janela" instance=ExtResource("5_curi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.645, 0.35091, 204.042)
+
+[node name="2" parent="Paredes/Sala de Aula4/janela" instance=ExtResource("5_curi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8359, 0.00289154, 40.8335)
+
+[node name="3" parent="Paredes/Sala de Aula4/janela" instance=ExtResource("5_curi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5305, 0.135014, 81.3738)
+
+[node name="4" parent="Paredes/Sala de Aula4/janela" instance=ExtResource("5_curi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.2932, 0.106838, 122.252)
+
+[node name="5" parent="Paredes/Sala de Aula4/janela" instance=ExtResource("5_curi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.091, 0.0736084, 163.117)
 
 [node name="Sala de Aula2" type="CSGBox3D" parent="Paredes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0370359, -0.404956, 16.5252)
@@ -123,6 +164,9 @@ size = Vector3(0.073234, 1, 1)
 
 [node name="Lamp" parent="Teto/Luminaria" instance=ExtResource("2_o0wtd")]
 transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Teto/Luminaria/Lamp"]
+transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
 
 [node name="Quadro" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138636, -0.379654, 0.344803)
@@ -165,67 +209,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.315154, 0.054927, 0.107446)
 size = Vector3(0.2, 0.018, 0.091)
 material = SubResource("StandardMaterial3D_iq4kw")
 
-[node name="Mesa" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.549702, -1.91967, 0)
-
-[node name="Apoio" type="CSGBox3D" parent="Mesa"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.79561, -0.421809, 2.48431)
-use_collision = true
-size = Vector3(2.20158, 0.201709, 0.784122)
-material = SubResource("StandardMaterial3D_436ii")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Mesa"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.92403, -0.541592, 2.50832)
-use_collision = true
-size = Vector3(0.0633708, 1.01954, 0.372114)
-material = SubResource("StandardMaterial3D_hmlns")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Mesa/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
-size = Vector3(0.0931174, 0.208227, 0.830895)
-material = SubResource("StandardMaterial3D_qs3vs")
-
-[node name="Tabua" type="CSGBox3D" parent="Mesa"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.727, 0.0044198, 2.48932)
-use_collision = true
-size = Vector3(3.31614, 0.0924245, 1.40602)
-material = SubResource("StandardMaterial3D_6v3v6")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Mesa"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66476, -0.541592, 2.50832)
-use_collision = true
-size = Vector3(0.0633708, 1.01954, 0.372114)
-material = SubResource("StandardMaterial3D_hmlns")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Mesa/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
-size = Vector3(0.0931174, 0.208227, 0.830895)
-material = SubResource("StandardMaterial3D_qs3vs")
-
 [node name="soap_dispenser2" parent="." instance=ExtResource("5_i45d6")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -4.57713, -0.949959, 0.585609)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1.46667, 0, 0, 0, 1.46667, 0, 0, 0, 1.46667, 0.0714285, 2.19719, 6.47583)
 size = Vector3(0.0276192, 0.446258, 0.002)
-
-[node name="janela" parent="." instance=ExtResource("5_curi5")]
-transform = Transform3D(0.0424352, 0, -0.0245, 0, 0.049, 0, 0.0245, 0, 0.0424352, 7.39361, -1.62388, 2.4227)
-
-[node name="1" parent="janela" instance=ExtResource("5_curi5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.645, 0.35091, 204.042)
-
-[node name="2" parent="janela" instance=ExtResource("5_curi5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8359, 0.00289154, 40.8335)
-
-[node name="3" parent="janela" instance=ExtResource("5_curi5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5305, 0.135014, 81.3738)
-
-[node name="4" parent="janela" instance=ExtResource("5_curi5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.2932, 0.106838, 122.252)
-
-[node name="5" parent="janela" instance=ExtResource("5_curi5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.091, 0.0736084, 163.117)
 
 [node name="Cadeiras" type="Node3D" parent="."]
 
@@ -321,5 +310,45 @@ transform = Transform3D(-5.46392e-08, 0, -1.25, 0, 1.25, 0, 1.25, 0, -5.46392e-0
 [node name="projetor" parent="." instance=ExtResource("6_ughcj")]
 transform = Transform3D(1.18363, 0, 0.921428, 0, 1.5, 0, -0.921428, 0, 1.18363, 0.0772744, 1.8372, 6.48304)
 
-[node name="looney_tunes_world_of_mayhem_marvin_the_martian" parent="." instance=ExtResource("8_bxvnv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6225, -1.86904, 2.35746)
+[node name="Mesa" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65363, -1.91967, 0.15153)
+
+[node name="MacBookPro_blend" parent="Mesa" instance=ExtResource("9_phn75")]
+transform = Transform3D(0.195183, 0, -0.0436286, 0, 0.2, 0, 0.0436286, 0, 0.195183, 4.17823, -0.00591421, 2.78062)
+
+[node name="Apoio" type="CSGBox3D" parent="Mesa"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.79561, -0.421809, 2.48431)
+use_collision = true
+size = Vector3(2.20158, 0.201709, 0.784122)
+material = SubResource("StandardMaterial3D_wjcc3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Mesa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.92403, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_fexcl")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesa/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_8v2vy")
+
+[node name="Tabua" type="CSGBox3D" parent="Mesa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.727, 0.0044198, 2.48932)
+use_collision = true
+size = Vector3(3.31614, 0.0924245, 1.40602)
+material = SubResource("StandardMaterial3D_8bpng")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66476, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_fexcl")
+
+[node name="chair_finish" parent="Mesa/CSGBox3D" instance=ExtResource("10_wm37a")]
+transform = Transform3D(-0.401948, 0, -0.915663, 0, 1, 0, 0.915663, 0, -0.401948, 1.20681, -0.443322, -1.22968)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesa/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_8v2vy")

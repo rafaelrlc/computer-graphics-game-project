@@ -1,0 +1,888 @@
+[gd_scene load_steps=25 format=3 uid="uid://yw400kuyylxc"]
+
+[ext_resource type="Texture2D" uid="uid://b1pq7ofbt2ky3" path="res://textures/imageedit_2_6097415317.jpg" id="1_xqv8l"]
+[ext_resource type="Texture2D" uid="uid://dlq6a7ht43of" path="res://textures/gray-wall-textures-background.jpg" id="2_3kyu8"]
+[ext_resource type="PackedScene" uid="uid://danqla7n5x7ao" path="res://scenes/window.tscn" id="3_6o0b1"]
+[ext_resource type="PackedScene" uid="uid://vedwllxyqyq2" path="res://monitor_1.tscn" id="3_ochy4"]
+[ext_resource type="PackedScene" uid="uid://4tqw5ho6dyqc" path="res://mouse.tscn" id="4_loc82"]
+[ext_resource type="PackedScene" path="res://teclado.glb" id="5_w6hng"]
+[ext_resource type="PackedScene" uid="uid://bi305kwtvl1kc" path="res://models/sabao/soap_dispenser.glb" id="6_fykba"]
+[ext_resource type="PackedScene" uid="uid://bq8y7piafu6gy" path="res://chair_finish.tscn" id="6_o6gty"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xcb5g"]
+albedo_texture = ExtResource("1_xqv8l")
+metallic = 0.23
+roughness = 0.28
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eaj5e"]
+albedo_texture = ExtResource("2_3kyu8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pykyy"]
+albedo_texture = ExtResource("1_xqv8l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxx5w"]
+metallic = 0.21
+roughness = 0.56
+ao_enabled = true
+backlight_enabled = true
+refraction_enabled = true
+detail_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgqur"]
+albedo_color = Color(0.752941, 0.752941, 0.752941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87v3h"]
+albedo_color = Color(0.921569, 0.917647, 0.980392, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3aawy"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_un78l"]
+albedo_texture = ExtResource("2_3kyu8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbve3"]
+albedo_color = Color(0.972549, 0.984314, 0.921569, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_574t6"]
+albedo_color = Color(0.976471, 0.980392, 0.929412, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mtret"]
+albedo_color = Color(0.976471, 0.984314, 0.913725, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lbk3"]
+albedo_color = Color(0.976471, 0.980392, 0.929412, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j23se"]
+albedo_color = Color(0.972549, 0.984314, 0.921569, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xyone"]
+albedo_color = Color(0.976471, 0.980392, 0.929412, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i60rm"]
+albedo_color = Color(0.976471, 0.984314, 0.913725, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0d3jo"]
+albedo_color = Color(0.976471, 0.980392, 0.929412, 1)
+
+[node name="Lab1" type="Node3D"]
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00423359, -3.29234, 8.25339)
+use_collision = true
+size = Vector3(32, 0.1, 22)
+material = SubResource("StandardMaterial3D_xcb5g")
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
+
+[node name="Sala de Aula3" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.0231647, -0.459366, 19.0119)
+size = Vector3(32, 5.5, 0.5)
+material = SubResource("StandardMaterial3D_eaj5e")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0358, -1.12903, 18.8509)
+operation = 2
+size = Vector3(2.73622, 4.15502, 1)
+material = SubResource("StandardMaterial3D_pykyy")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61022, -1.12903, 18.8509)
+operation = 2
+size = Vector3(2.73622, 4.15502, 1)
+material = SubResource("StandardMaterial3D_pykyy")
+
+[node name="Sala de Aula4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.7391, -0.415333, 8.2049)
+use_collision = true
+size = Vector3(22, 5.5, 0.5)
+material = SubResource("StandardMaterial3D_eaj5e")
+
+[node name="Sala de Aula4" type="CSGBox3D" parent="Sala de Aula4"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00379372, -0.0285793, -31.4397)
+use_collision = true
+size = Vector3(22, 5.5, 0.5)
+material = SubResource("StandardMaterial3D_eaj5e")
+
+[node name="Quadro" type="CSGBox3D" parent="Sala de Aula4"]
+transform = Transform3D(0.75, 0, -1.06581e-14, 0, 0.75, 0, 1.06581e-14, 0, 0.75, 0.0036602, -0.421852, -30.9464)
+size = Vector3(10, 3.851, 0.03)
+material = SubResource("StandardMaterial3D_rxx5w")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Sala de Aula4/Quadro"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -4.94294, 0.00840139, 0.0295906)
+size = Vector3(3.669, 0.1, 0.02)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sala de Aula4/Quadro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013746, -1.87321, 0.0248929)
+size = Vector3(10, 0.1, 0.02)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Sala de Aula4/Quadro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00074935, 1.87603, 0.0314635)
+size = Vector3(10, 0.1, 0.02)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Sala de Aula4/Quadro"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.94557, -0.00139093, 0.0295887)
+size = Vector3(3.669, 0.1, 0.02)
+
+[node name="porta-piloto" type="CSGBox3D" parent="Sala de Aula4/Quadro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.52073, -1.96699, 0.0542111)
+size = Vector3(1, 0.0769838, 0.396639)
+material = SubResource("StandardMaterial3D_tgqur")
+
+[node name="suporte" type="CSGBox3D" parent="Sala de Aula4/Quadro/porta-piloto"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.000704765, 0.0578852, 0.195056)
+visible = false
+size = Vector3(0.990738, 0.002, 0.03)
+
+[node name="apagador2" type="CSGBox3D" parent="Sala de Aula4/Quadro/porta-piloto"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3151, 0.073631, 0.106448)
+size = Vector3(0.2, 0.018, 0.091)
+material = SubResource("StandardMaterial3D_87v3h")
+
+[node name="apagador" type="CSGBox3D" parent="Sala de Aula4/Quadro/porta-piloto"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.315154, 0.054927, 0.107446)
+size = Vector3(0.2, 0.018, 0.091)
+material = SubResource("StandardMaterial3D_3aawy")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="Sala de Aula5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.0231647, -0.459366, -2.49552)
+use_collision = true
+size = Vector3(32, 5.5, 0.5)
+material = SubResource("StandardMaterial3D_eaj5e")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127326, -0.918205, -2.33899)
+operation = 2
+size = Vector3(27.7, 2.332, 1)
+
+[node name="teto" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.6546, 8.173)
+size = Vector3(32, 22, 1)
+material = SubResource("StandardMaterial3D_un78l")
+
+[node name="Mesas" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17694, 0, 0)
+
+[node name="Mesa" type="Node3D" parent="Mesas"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.22701, -1.90853, 19.8707)
+
+[node name="monitor1" parent="Mesas/Mesa" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 4.15776, 0.153053, 1.24836)
+
+[node name="monitor2" parent="Mesas/Mesa" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 9.42486, 0.153053, 1.24836)
+
+[node name="monitor3" parent="Mesas/Mesa" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 6.81373, 0.153053, 1.24836)
+
+[node name="mouse" parent="Mesas/Mesa" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.41537, 0.0504197, 2.98089)
+
+[node name="mouse2" parent="Mesas/Mesa" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.15841, 0.0180761, 3.00252)
+
+[node name="mouse3" parent="Mesas/Mesa" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.63052, 0.0504197, 2.98089)
+
+[node name="teclado3" parent="Mesas/Mesa" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 3.38453, 0.0504198, 3.0101)
+
+[node name="teclado2" parent="Mesas/Mesa" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 6.1206, 0.0504198, 3.0101)
+
+[node name="teclado" parent="Mesas/Mesa" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 8.65131, 0.0504198, 3.0101)
+
+[node name="Apoio" type="CSGBox3D" parent="Mesas/Mesa"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.10217, -0.421809, 2.48431)
+use_collision = true
+size = Vector3(7.28132, 0.202, 0.784)
+material = SubResource("StandardMaterial3D_gbve3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Mesas/Mesa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72253, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142632, -0.627924, -0.0138597)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Tabua" type="CSGBox3D" parent="Mesas/Mesa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06385, 0.0044198, 2.48932)
+use_collision = true
+size = Vector3(8, 0.092, 2.25)
+material = SubResource("StandardMaterial3D_1lbk3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46579, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Mesa2" type="Node3D" parent="Mesas"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.217052, -2.09567, 19.8882)
+
+[node name="monitor1" parent="Mesas/Mesa2" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 4.15776, 0.153053, 1.24836)
+
+[node name="monitor2" parent="Mesas/Mesa2" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 9.42486, 0.153053, 1.24836)
+
+[node name="monitor3" parent="Mesas/Mesa2" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 6.81373, 0.153053, 1.24836)
+
+[node name="mouse" parent="Mesas/Mesa2" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.41537, 0.0504197, 2.98089)
+
+[node name="mouse2" parent="Mesas/Mesa2" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.15841, 0.0180761, 3.00252)
+
+[node name="mouse3" parent="Mesas/Mesa2" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.63052, 0.0504197, 2.98089)
+
+[node name="teclado3" parent="Mesas/Mesa2" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 3.38453, 0.0504198, 3.0101)
+
+[node name="teclado2" parent="Mesas/Mesa2" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 6.1206, 0.0504198, 3.0101)
+
+[node name="teclado" parent="Mesas/Mesa2" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 8.65131, 0.0504198, 3.0101)
+
+[node name="Apoio" type="CSGBox3D" parent="Mesas/Mesa2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.10217, -0.421809, 2.48431)
+use_collision = true
+size = Vector3(7.28132, 0.202, 0.784)
+material = SubResource("StandardMaterial3D_gbve3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Mesas/Mesa2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72253, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa2/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142632, -0.627924, -0.0138597)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Tabua" type="CSGBox3D" parent="Mesas/Mesa2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06385, 0.0044198, 2.48932)
+use_collision = true
+size = Vector3(8, 0.092, 2.25)
+material = SubResource("StandardMaterial3D_1lbk3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46579, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa2/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Mesa3" type="Node3D" parent="Mesas"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.97207, -1.90853, 19.8707)
+
+[node name="monitor1" parent="Mesas/Mesa3" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 4.15776, 0.153053, 1.24836)
+
+[node name="monitor2" parent="Mesas/Mesa3" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 9.42486, 0.153053, 1.24836)
+
+[node name="monitor3" parent="Mesas/Mesa3" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 6.81373, 0.153053, 1.24836)
+
+[node name="mouse" parent="Mesas/Mesa3" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.41537, 0.0504197, 2.98089)
+
+[node name="mouse2" parent="Mesas/Mesa3" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.15841, 0.0180761, 3.00252)
+
+[node name="mouse3" parent="Mesas/Mesa3" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.63052, 0.0504197, 2.98089)
+
+[node name="teclado3" parent="Mesas/Mesa3" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 3.38453, 0.0504198, 3.0101)
+
+[node name="teclado2" parent="Mesas/Mesa3" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 6.1206, 0.0504198, 3.0101)
+
+[node name="teclado" parent="Mesas/Mesa3" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 8.65131, 0.0504198, 3.0101)
+
+[node name="Apoio" type="CSGBox3D" parent="Mesas/Mesa3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.10217, -0.421809, 2.48431)
+use_collision = true
+size = Vector3(7.28132, 0.202, 0.784)
+material = SubResource("StandardMaterial3D_gbve3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Mesas/Mesa3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72253, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa3/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142632, -0.627924, -0.0138597)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Tabua" type="CSGBox3D" parent="Mesas/Mesa3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06385, 0.0044198, 2.48932)
+use_collision = true
+size = Vector3(8, 0.092, 2.25)
+material = SubResource("StandardMaterial3D_1lbk3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46579, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa3/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Mesa4" type="Node3D" parent="Mesas"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.65443, -1.90853, 19.8707)
+
+[node name="monitor1" parent="Mesas/Mesa4" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 4.15776, 0.153053, 1.24836)
+
+[node name="monitor2" parent="Mesas/Mesa4" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 9.42486, 0.153053, 1.24836)
+
+[node name="monitor3" parent="Mesas/Mesa4" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 6.81373, 0.153053, 1.24836)
+
+[node name="mouse" parent="Mesas/Mesa4" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.41537, 0.0504197, 2.98089)
+
+[node name="mouse2" parent="Mesas/Mesa4" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.15841, 0.0180761, 3.00252)
+
+[node name="mouse3" parent="Mesas/Mesa4" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.63052, 0.0504197, 2.98089)
+
+[node name="teclado3" parent="Mesas/Mesa4" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 3.38453, 0.0504198, 3.0101)
+
+[node name="teclado2" parent="Mesas/Mesa4" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 6.1206, 0.0504198, 3.0101)
+
+[node name="teclado" parent="Mesas/Mesa4" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 8.65131, 0.0504198, 3.0101)
+
+[node name="Apoio" type="CSGBox3D" parent="Mesas/Mesa4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.10217, -0.421809, 2.48431)
+use_collision = true
+size = Vector3(7.28132, 0.202, 0.784)
+material = SubResource("StandardMaterial3D_gbve3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Mesas/Mesa4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72253, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa4/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142632, -0.627924, -0.0138597)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Tabua" type="CSGBox3D" parent="Mesas/Mesa4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06385, 0.0044198, 2.48932)
+use_collision = true
+size = Vector3(8, 0.092, 2.25)
+material = SubResource("StandardMaterial3D_1lbk3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46579, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa4/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Mesa5" type="Node3D" parent="Mesas"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.3446, -1.90853, 19.8707)
+
+[node name="monitor1" parent="Mesas/Mesa5" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 4.15776, 0.153053, 1.24836)
+
+[node name="monitor2" parent="Mesas/Mesa5" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 9.42486, 0.153053, 1.24836)
+
+[node name="monitor3" parent="Mesas/Mesa5" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 6.81373, 0.153053, 1.24836)
+
+[node name="mouse" parent="Mesas/Mesa5" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.41537, 0.0504197, 2.98089)
+
+[node name="mouse2" parent="Mesas/Mesa5" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.15841, 0.0180761, 3.00252)
+
+[node name="mouse3" parent="Mesas/Mesa5" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.63052, 0.0504197, 2.98089)
+
+[node name="teclado3" parent="Mesas/Mesa5" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 3.38453, 0.0504198, 3.0101)
+
+[node name="teclado2" parent="Mesas/Mesa5" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 6.1206, 0.0504198, 3.0101)
+
+[node name="teclado" parent="Mesas/Mesa5" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 8.65131, 0.0504198, 3.0101)
+
+[node name="Apoio" type="CSGBox3D" parent="Mesas/Mesa5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.10217, -0.421809, 2.48431)
+use_collision = true
+size = Vector3(7.28132, 0.202, 0.784)
+material = SubResource("StandardMaterial3D_gbve3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Mesas/Mesa5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72253, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa5/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142632, -0.627924, -0.0138597)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Tabua" type="CSGBox3D" parent="Mesas/Mesa5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06385, 0.0044198, 2.48932)
+use_collision = true
+size = Vector3(8, 0.092, 2.25)
+material = SubResource("StandardMaterial3D_1lbk3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46579, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa5/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Mesa6" type="Node3D" parent="Mesas"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.22701, -1.90853, 8.55266)
+
+[node name="monitor1" parent="Mesas/Mesa6" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 4.15776, 0.153053, 1.24836)
+
+[node name="monitor2" parent="Mesas/Mesa6" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 9.42486, 0.153053, 1.24836)
+
+[node name="monitor3" parent="Mesas/Mesa6" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 6.81373, 0.153053, 1.24836)
+
+[node name="mouse" parent="Mesas/Mesa6" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.41537, 0.0504197, 2.98089)
+
+[node name="mouse2" parent="Mesas/Mesa6" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.15841, 0.0180761, 3.00252)
+
+[node name="mouse3" parent="Mesas/Mesa6" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.63052, 0.0504197, 2.98089)
+
+[node name="teclado3" parent="Mesas/Mesa6" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 3.38453, 0.0504198, 3.0101)
+
+[node name="teclado2" parent="Mesas/Mesa6" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 6.1206, 0.0504198, 3.0101)
+
+[node name="teclado" parent="Mesas/Mesa6" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 8.65131, 0.0504198, 3.0101)
+
+[node name="Apoio" type="CSGBox3D" parent="Mesas/Mesa6"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.10217, -0.421809, 2.48431)
+use_collision = true
+size = Vector3(7.28132, 0.202, 0.784)
+material = SubResource("StandardMaterial3D_gbve3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Mesas/Mesa6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72253, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa6/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142632, -0.627924, -0.0138597)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Tabua" type="CSGBox3D" parent="Mesas/Mesa6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06385, 0.0044198, 2.48932)
+use_collision = true
+size = Vector3(8, 0.092, 2.25)
+material = SubResource("StandardMaterial3D_1lbk3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46579, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa6/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Mesa7" type="Node3D" parent="Mesas"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.217052, -2.09567, 8.57019)
+
+[node name="monitor1" parent="Mesas/Mesa7" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 4.15776, 0.153053, 1.24836)
+
+[node name="monitor2" parent="Mesas/Mesa7" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 9.42486, 0.153053, 1.24836)
+
+[node name="monitor3" parent="Mesas/Mesa7" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 6.81373, 0.153053, 1.24836)
+
+[node name="mouse" parent="Mesas/Mesa7" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.41537, 0.0504197, 2.98089)
+
+[node name="mouse2" parent="Mesas/Mesa7" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.15841, 0.0180761, 3.00252)
+
+[node name="mouse3" parent="Mesas/Mesa7" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.63052, 0.0504197, 2.98089)
+
+[node name="teclado3" parent="Mesas/Mesa7" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 3.38453, 0.0504198, 3.0101)
+
+[node name="teclado2" parent="Mesas/Mesa7" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 6.1206, 0.0504198, 3.0101)
+
+[node name="teclado" parent="Mesas/Mesa7" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 8.65131, 0.0504198, 3.0101)
+
+[node name="Apoio" type="CSGBox3D" parent="Mesas/Mesa7"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.10217, -0.421809, 2.48431)
+use_collision = true
+size = Vector3(7.28132, 0.202, 0.784)
+material = SubResource("StandardMaterial3D_gbve3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Mesas/Mesa7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72253, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa7/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142632, -0.627924, -0.0138597)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Tabua" type="CSGBox3D" parent="Mesas/Mesa7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06385, 0.0044198, 2.48932)
+use_collision = true
+size = Vector3(8, 0.092, 2.25)
+material = SubResource("StandardMaterial3D_1lbk3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46579, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa7/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Mesa8" type="Node3D" parent="Mesas"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.97207, -1.90853, 8.55266)
+
+[node name="monitor1" parent="Mesas/Mesa8" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 4.15776, 0.153053, 1.24836)
+
+[node name="monitor2" parent="Mesas/Mesa8" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 9.42486, 0.153053, 1.24836)
+
+[node name="monitor3" parent="Mesas/Mesa8" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 6.81373, 0.153053, 1.24836)
+
+[node name="mouse" parent="Mesas/Mesa8" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.41537, 0.0504197, 2.98089)
+
+[node name="mouse2" parent="Mesas/Mesa8" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.15841, 0.0180761, 3.00252)
+
+[node name="mouse3" parent="Mesas/Mesa8" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.63052, 0.0504197, 2.98089)
+
+[node name="teclado3" parent="Mesas/Mesa8" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 3.38453, 0.0504198, 3.0101)
+
+[node name="teclado2" parent="Mesas/Mesa8" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 6.1206, 0.0504198, 3.0101)
+
+[node name="teclado" parent="Mesas/Mesa8" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 8.65131, 0.0504198, 3.0101)
+
+[node name="Apoio" type="CSGBox3D" parent="Mesas/Mesa8"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.10217, -0.421809, 2.48431)
+use_collision = true
+size = Vector3(7.28132, 0.202, 0.784)
+material = SubResource("StandardMaterial3D_gbve3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Mesas/Mesa8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72253, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa8/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142632, -0.627924, -0.0138597)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Tabua" type="CSGBox3D" parent="Mesas/Mesa8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06385, 0.0044198, 2.48932)
+use_collision = true
+size = Vector3(8, 0.092, 2.25)
+material = SubResource("StandardMaterial3D_1lbk3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46579, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa8/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Mesa9" type="Node3D" parent="Mesas"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.65443, -1.90853, 8.55266)
+
+[node name="monitor1" parent="Mesas/Mesa9" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 4.15776, 0.153053, 1.24836)
+
+[node name="monitor2" parent="Mesas/Mesa9" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 9.42486, 0.153053, 1.24836)
+
+[node name="monitor3" parent="Mesas/Mesa9" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 6.81373, 0.153053, 1.24836)
+
+[node name="mouse" parent="Mesas/Mesa9" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.41537, 0.0504197, 2.98089)
+
+[node name="mouse2" parent="Mesas/Mesa9" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.15841, 0.0180761, 3.00252)
+
+[node name="mouse3" parent="Mesas/Mesa9" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.63052, 0.0504197, 2.98089)
+
+[node name="teclado3" parent="Mesas/Mesa9" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 3.38453, 0.0504198, 3.0101)
+
+[node name="teclado2" parent="Mesas/Mesa9" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 6.1206, 0.0504198, 3.0101)
+
+[node name="teclado" parent="Mesas/Mesa9" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 8.65131, 0.0504198, 3.0101)
+
+[node name="Apoio" type="CSGBox3D" parent="Mesas/Mesa9"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.10217, -0.421809, 2.48431)
+use_collision = true
+size = Vector3(7.28132, 0.202, 0.784)
+material = SubResource("StandardMaterial3D_gbve3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Mesas/Mesa9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72253, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa9/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142632, -0.627924, -0.0138597)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Tabua" type="CSGBox3D" parent="Mesas/Mesa9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06385, 0.0044198, 2.48932)
+use_collision = true
+size = Vector3(8, 0.092, 2.25)
+material = SubResource("StandardMaterial3D_1lbk3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46579, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa9/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Mesa10" type="Node3D" parent="Mesas"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.3446, -1.90853, 8.55266)
+
+[node name="monitor1" parent="Mesas/Mesa10" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 4.15776, 0.153053, 1.24836)
+
+[node name="monitor2" parent="Mesas/Mesa10" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 9.42486, 0.153053, 1.24836)
+
+[node name="monitor3" parent="Mesas/Mesa10" instance=ExtResource("3_ochy4")]
+transform = Transform3D(-0.0899692, 0, -0.00235593, 0, 0.09, 0, 0.00235593, 0, -0.0899692, 6.81373, 0.153053, 1.24836)
+
+[node name="mouse" parent="Mesas/Mesa10" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.41537, 0.0504197, 2.98089)
+
+[node name="mouse2" parent="Mesas/Mesa10" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.15841, 0.0180761, 3.00252)
+
+[node name="mouse3" parent="Mesas/Mesa10" instance=ExtResource("4_loc82")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.63052, 0.0504197, 2.98089)
+
+[node name="teclado3" parent="Mesas/Mesa10" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 3.38453, 0.0504198, 3.0101)
+
+[node name="teclado2" parent="Mesas/Mesa10" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 6.1206, 0.0504198, 3.0101)
+
+[node name="teclado" parent="Mesas/Mesa10" instance=ExtResource("5_w6hng")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 8.65131, 0.0504198, 3.0101)
+
+[node name="Apoio" type="CSGBox3D" parent="Mesas/Mesa10"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.10217, -0.421809, 2.48431)
+use_collision = true
+size = Vector3(7.28132, 0.202, 0.784)
+material = SubResource("StandardMaterial3D_gbve3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Mesas/Mesa10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.72253, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa10/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142632, -0.627924, -0.0138597)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="Tabua" type="CSGBox3D" parent="Mesas/Mesa10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06385, 0.0044198, 2.48932)
+use_collision = true
+size = Vector3(8, 0.092, 2.25)
+material = SubResource("StandardMaterial3D_1lbk3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46579, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_574t6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesas/Mesa10/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_mtret")
+
+[node name="janelas" type="Node3D" parent="."]
+
+[node name="1" parent="janelas" instance=ExtResource("3_6o0b1")]
+transform = Transform3D(0.0237557, 0, 0.0428564, 0, 0.049, 0, -0.0428564, 0, 0.0237557, 12.9257, -2.81746, -2.25101)
+
+[node name="2" parent="janelas" instance=ExtResource("3_6o0b1")]
+transform = Transform3D(0.0237557, 0, 0.0428564, 0, 0.049, 0, -0.0428564, 0, 0.0237557, 10.5791, -2.81746, -2.25101)
+
+[node name="3" parent="janelas" instance=ExtResource("3_6o0b1")]
+transform = Transform3D(0.0237557, 0, 0.0428564, 0, 0.049, 0, -0.0428564, 0, 0.0237557, 8.26465, -2.81746, -2.25101)
+
+[node name="4" parent="janelas" instance=ExtResource("3_6o0b1")]
+transform = Transform3D(0.0237557, 0, 0.0428564, 0, 0.049, 0, -0.0428564, 0, 0.0237557, 5.91491, -2.81746, -2.25101)
+
+[node name="5" parent="janelas" instance=ExtResource("3_6o0b1")]
+transform = Transform3D(0.0237557, 0, 0.0428564, 0, 0.049, 0, -0.0428564, 0, 0.0237557, 3.59801, -2.81746, -2.25101)
+
+[node name="6" parent="janelas" instance=ExtResource("3_6o0b1")]
+transform = Transform3D(0.0237557, 0, 0.0428564, 0, 0.049, 0, -0.0428564, 0, 0.0237557, 1.28031, -2.81746, -2.25101)
+
+[node name="7" parent="janelas" instance=ExtResource("3_6o0b1")]
+transform = Transform3D(0.0237557, 0, 0.0428564, 0, 0.049, 0, -0.0428564, 0, 0.0237557, -1.0382, -2.81746, -2.25101)
+
+[node name="8" parent="janelas" instance=ExtResource("3_6o0b1")]
+transform = Transform3D(0.0237557, 0, 0.0428564, 0, 0.049, 0, -0.0428564, 0, 0.0237557, -5.67003, -2.81746, -2.25101)
+
+[node name="9" parent="janelas" instance=ExtResource("3_6o0b1")]
+transform = Transform3D(0.0237557, 0, 0.0428564, 0, 0.049, 0, -0.0428564, 0, 0.0237557, -3.35848, -2.81746, -2.25101)
+
+[node name="10" parent="janelas" instance=ExtResource("3_6o0b1")]
+transform = Transform3D(0.0237557, 0, 0.0428564, 0, 0.049, 0, -0.0428564, 0, 0.0237557, -7.94966, -2.81746, -2.25101)
+
+[node name="11" parent="janelas" instance=ExtResource("3_6o0b1")]
+transform = Transform3D(0.0237557, 0, 0.0428564, 0, 0.049, 0, -0.0428564, 0, 0.0237557, -10.2842, -2.81746, -2.25101)
+
+[node name="12" parent="janelas" instance=ExtResource("3_6o0b1")]
+transform = Transform3D(0.0237557, 0, 0.0428564, 0, 0.049, 0, -0.0428564, 0, 0.0237557, -12.6024, -2.81746, -2.25101)
+
+[node name="Mesa" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.4263, -1.97342, 6.404)
+
+[node name="Apoio" type="CSGBox3D" parent="Mesa"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.79561, -0.421809, 2.48431)
+use_collision = true
+size = Vector3(2.20158, 0.201709, 0.784122)
+material = SubResource("StandardMaterial3D_j23se")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Mesa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.92403, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_xyone")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesa/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_i60rm")
+
+[node name="Tabua" type="CSGBox3D" parent="Mesa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.727, 0.0044198, 2.48932)
+use_collision = true
+size = Vector3(3.31614, 0.0924245, 1.40602)
+material = SubResource("StandardMaterial3D_0d3jo")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66476, -0.541592, 2.50832)
+use_collision = true
+size = Vector3(0.0633708, 1.01954, 0.372114)
+material = SubResource("StandardMaterial3D_xyone")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Mesa/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
+size = Vector3(0.0931174, 0.208227, 0.830895)
+material = SubResource("StandardMaterial3D_i60rm")
+
+[node name="soap_dispenser2" parent="." instance=ExtResource("6_fykba")]
+transform = Transform3D(-8.74228e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.74228e-10, -15.1901, -1.1175, 13.6977)
+
+[node name="chair_finish" parent="." instance=ExtResource("6_o6gty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0196, -2.63482, 1.97473)
