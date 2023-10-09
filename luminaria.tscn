@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl2mfhfst5k6s"]
+
+[ext_resource type="PackedScene" uid="uid://3uttwuy45y1t" path="res://scenes/luminaria.glb" id="1_acfdl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tta3s"]
+albedo_color = Color(0.992157, 0.996078, 0.992157, 1)
+metallic = 0.06
+roughness = 0.48
+emission_enabled = true
+emission = Color(0.921569, 0.913725, 0.164706, 1)
+
+[node name="luminaria" instance=ExtResource("1_acfdl")]
+
+[node name="Cylinder035" parent="Cylinder034/Cylinder047" index="0"]
+transform = Transform3D(1, 0, 9.66637e-09, 0, 1, 0, 2.75418e-09, 0, 1, 0, 25, 0)
+surface_material_override/1 = SubResource("StandardMaterial3D_tta3s")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Cylinder034/Cylinder047/Cylinder035" index="0"]
+transform = Transform3D(-13.9623, 3.53623e-13, 999.902, 3.48787e-13, 1000, -3.48787e-13, -999.902, 3.43883e-13, -13.9623, -113.76, 28.852, 0.112178)
+light_color = Color(1, 1, 0.803922, 1)
+light_energy = 12.111
+spot_range = 10.0311
+spot_angle = 24.6408

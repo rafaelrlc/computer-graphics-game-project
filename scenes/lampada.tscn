@@ -104,7 +104,7 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gu3du"]
 emission_enabled = true
-emission = Color(0.960784, 0.972549, 0.247059, 1)
+emission = Color(0.980392, 0.996078, 0.709804, 1)
 emission_energy_multiplier = 3.6
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yr0ud"]

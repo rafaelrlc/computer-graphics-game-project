@@ -1,25 +1,28 @@
-[gd_scene load_steps=25 format=3 uid="uid://yw400kuyylxc"]
+[gd_scene load_steps=28 format=3 uid="uid://yw400kuyylxc"]
 
 [ext_resource type="Texture2D" uid="uid://b1pq7ofbt2ky3" path="res://textures/imageedit_2_6097415317.jpg" id="1_xqv8l"]
 [ext_resource type="Texture2D" uid="uid://dlq6a7ht43of" path="res://textures/gray-wall-textures-background.jpg" id="2_3kyu8"]
 [ext_resource type="PackedScene" uid="uid://danqla7n5x7ao" path="res://scenes/window.tscn" id="3_6o0b1"]
+[ext_resource type="PackedScene" uid="uid://ccgmr3xy35w3e" path="res://scenes/lampada.tscn" id="3_mhv3s"]
 [ext_resource type="PackedScene" uid="uid://vedwllxyqyq2" path="res://monitor_1.tscn" id="3_ochy4"]
 [ext_resource type="PackedScene" uid="uid://4tqw5ho6dyqc" path="res://mouse.tscn" id="4_loc82"]
-[ext_resource type="PackedScene" path="res://teclado.glb" id="5_w6hng"]
+[ext_resource type="PackedScene" uid="uid://c8rcwwawbniqv" path="res://teclado.glb" id="5_w6hng"]
 [ext_resource type="PackedScene" uid="uid://bi305kwtvl1kc" path="res://models/sabao/soap_dispenser.glb" id="6_fykba"]
 [ext_resource type="PackedScene" uid="uid://bq8y7piafu6gy" path="res://chair_finish.tscn" id="6_o6gty"]
+[ext_resource type="Texture2D" uid="uid://b3stb5allkwn3" path="res://textura-do-relevo-pintado.jpg" id="7_tp38o"]
+[ext_resource type="PackedScene" uid="uid://bl2mfhfst5k6s" path="res://luminaria.tscn" id="10_1p1bc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xcb5g"]
 albedo_texture = ExtResource("1_xqv8l")
-metallic = 0.23
-roughness = 0.28
+metallic = 0.1
+roughness = 0.18
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eaj5e"]
 albedo_texture = ExtResource("2_3kyu8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pykyy"]
-albedo_texture = ExtResource("1_xqv8l")
+albedo_texture = ExtResource("2_3kyu8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxx5w"]
 metallic = 0.21
@@ -43,15 +46,28 @@ albedo_texture = ExtResource("2_3kyu8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbve3"]
 albedo_color = Color(0.972549, 0.984314, 0.921569, 1)
+albedo_texture = ExtResource("7_tp38o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_574t6"]
-albedo_color = Color(0.976471, 0.980392, 0.929412, 1)
+albedo_color = Color(0.972549, 0.984314, 0.921569, 1)
+albedo_texture = ExtResource("7_tp38o")
+roughness = 0.25
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mtret"]
-albedo_color = Color(0.976471, 0.984314, 0.913725, 1)
+albedo_color = Color(0.972549, 0.984314, 0.921569, 1)
+albedo_texture = ExtResource("7_tp38o")
+roughness = 0.16
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lbk3"]
-albedo_color = Color(0.976471, 0.980392, 0.929412, 1)
+albedo_color = Color(0.972549, 0.984314, 0.921569, 1)
+albedo_texture = ExtResource("7_tp38o")
+metallic = 0.14
+roughness = 0.1
+emission_enabled = true
+emission = Color(0.756863, 0.756863, 0.756863, 1)
+emission_energy_multiplier = 0.06
+uv1_triplanar_sharpness = 8.57418
+uv2_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j23se"]
 albedo_color = Color(0.972549, 0.984314, 0.921569, 1)
@@ -162,6 +178,59 @@ size = Vector3(27.7, 2.332, 1)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.6546, 8.173)
 size = Vector3(32, 22, 1)
 material = SubResource("StandardMaterial3D_un78l")
+
+[node name="Luminaria" type="CSGBox3D" parent="teto"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 0.0115015, 0.999934, -4.37085e-08, -0.999934, 0.0115015, -5.02746e-10, 0.100223, -0.59838, 0.53544)
+size = Vector3(0.073234, 1, 1)
+
+[node name="Lamp" parent="teto/Luminaria" instance=ExtResource("3_mhv3s")]
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+visible = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria/Lamp"]
+transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="teto/Luminaria/Lamp"]
+
+[node name="Luminaria2" type="CSGBox3D" parent="teto"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 0.0115015, 0.999934, -4.37085e-08, -0.999934, 0.0115015, -5.02746e-10, 10.1601, -0.59838, 0.53544)
+size = Vector3(0.073234, 1, 1)
+
+[node name="Lamp" parent="teto/Luminaria2" instance=ExtResource("3_mhv3s")]
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria2/Lamp"]
+transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
+
+[node name="Luminaria3" type="CSGBox3D" parent="teto"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 0.0115015, 0.999934, -4.37085e-08, -0.999934, 0.0115015, -5.02746e-10, -6.04214, -0.59838, 0.53544)
+size = Vector3(0.073234, 1, 1)
+
+[node name="Lamp" parent="teto/Luminaria3" instance=ExtResource("3_mhv3s")]
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria3/Lamp"]
+transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
+
+[node name="Luminaria" type="CSGBox3D" parent="teto/Luminaria3"]
+transform = Transform3D(-1.66099e-11, 4.36375e-08, 1, 0.0115015, 0.999934, -4.33967e-08, -0.999934, 0.0115015, -5.02746e-10, 0.100223, -0.598381, 0.53544)
+size = Vector3(0.073234, 1, 1)
+
+[node name="Lamp" parent="teto/Luminaria3/Luminaria" instance=ExtResource("3_mhv3s")]
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria3/Luminaria/Lamp"]
+transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
+
+[node name="Luminaria4" type="CSGBox3D" parent="teto"]
+transform = Transform3D(-4.32058e-08, 4.42084e-08, 1, 0.0115015, 0.999934, -4.37085e-08, -0.999934, 0.0115015, -4.37114e-08, -10.2648, 0.0137005, 0.53544)
+size = Vector3(0.073234, 1, 1)
+
+[node name="Lamp" parent="teto/Luminaria4" instance=ExtResource("3_mhv3s")]
+transform = Transform3D(2.72384e-16, -0.15, 6.56236e-09, 6.55671e-09, -6.53784e-09, -0.15, 0.15, 1.38473e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186663)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria4/Lamp"]
+transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
 
 [node name="Mesas" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17694, 0, 0)
@@ -533,8 +602,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142632, -0.627924, -0.013
 size = Vector3(0.0931174, 0.208227, 0.830895)
 material = SubResource("StandardMaterial3D_mtret")
 
-[node name="Tabua" type="CSGBox3D" parent="Mesas/Mesa6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06385, 0.0044198, 2.48932)
+[node name="Tabua2" type="CSGBox3D" parent="Mesas/Mesa6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.07108, 0.00883961, 2.47348)
 use_collision = true
 size = Vector3(8, 0.092, 2.25)
 material = SubResource("StandardMaterial3D_1lbk3")
@@ -886,3 +955,6 @@ transform = Transform3D(-8.74228e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.74228e-1
 
 [node name="chair_finish" parent="." instance=ExtResource("6_o6gty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0196, -2.63482, 1.97473)
+
+[node name="luminaria" parent="." instance=ExtResource("10_1p1bc")]
+transform = Transform3D(1.18295, -2.24566e-16, 0.539101, 4.53423e-16, 1.3, -4.53423e-16, -0.539101, 6.00629e-16, 1.18295, -11.4739, -1.92279, 0.678629)

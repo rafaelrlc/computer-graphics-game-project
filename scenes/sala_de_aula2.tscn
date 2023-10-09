@@ -81,9 +81,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.1
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Paredes"]
 
 [node name="Sala de Aula3" type="CSGBox3D" parent="Paredes/CSGCombiner3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.76209, -0.415333, 8.2617)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.76209, -0.415333, 8.26151)
 use_collision = true
-size = Vector3(16, 5.5, 0.5)
+size = Vector3(17.0135, 5.5, 0.5)
 material = SubResource("StandardMaterial3D_d4sg5")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Paredes/CSGCombiner3D"]
@@ -93,9 +93,9 @@ size = Vector3(2.73622, 4.15502, 1)
 material = SubResource("StandardMaterial3D_y50hw")
 
 [node name="Sala de Aula" type="CSGBox3D" parent="Paredes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0193402, -0.378696, 0.072834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.207019, -0.378696, 0.072834)
 use_collision = true
-size = Vector3(15.8802, 5.58629, 0.5)
+size = Vector3(15.4117, 5.58629, 0.5)
 material = SubResource("StandardMaterial3D_bw1k3")
 
 [node name="Sala de Aula4" type="CSGBox3D" parent="Paredes"]
@@ -139,9 +139,9 @@ size = Vector3(0.5, 2.332, 1.07492)
 material = SubResource("StandardMaterial3D_o8j1e")
 
 [node name="Sala de Aula2" type="CSGBox3D" parent="Paredes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0370359, -0.404956, 16.5252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.352787, -0.398945, 16.5315)
 use_collision = true
-size = Vector3(16, 5.54651, 0.5)
+size = Vector3(15.4465, 5.54651, 0.5)
 material = SubResource("StandardMaterial3D_flqf4")
 
 [node name="ar-condicionado" parent="Paredes/Sala de Aula2" instance=ExtResource("3_23o50")]

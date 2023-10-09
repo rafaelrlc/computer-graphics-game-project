@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bsrfds5ucusbb"]
+[gd_scene load_steps=20 format=3 uid="uid://bsrfds5ucusbb"]
 
 [ext_resource type="Texture2D" uid="uid://cm25v6rrvpp0v" path="res://textures/Cartoon_green_texture_grass.jpg" id="1_a33yn"]
 [ext_resource type="Script" path="res://scripts/CharacterBody3D.gd" id="2_x67ya"]
@@ -36,15 +36,13 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypxq3"]
 albedo_texture = ExtResource("5_0odt7")
-metallic = 0.31
-roughness = 0.3
+metallic = 0.27
+roughness = 0.08
 uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spy6c"]
-albedo_texture = ExtResource("6_6tvnc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yduaj"]
 albedo_texture = ExtResource("6_6tvnc")
+roughness = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtqfg"]
 albedo_texture = ExtResource("6_6tvnc")
@@ -56,9 +54,9 @@ albedo_texture = ExtResource("6_6tvnc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.44976)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.66523, -0.207054, 0.717355, 0, 0.960779, 0.277315, -0.746638, -0.184478, 0.63914, 0, 0, 0)
+transform = Transform3D(-0.057564, -0.423496, 0.904068, 3.1585e-16, 0.905569, 0.4242, -0.998341, 0.0244186, -0.0521283, 0, 0, 0)
 light_color = Color(1, 1, 0.776471, 1)
-light_energy = 5.044
+light_energy = 9.266
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -91,13 +89,13 @@ current = true
 fov = 96.4628
 
 [node name="Sala3" parent="." instance=ExtResource("4_v5cy8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61901, 4.22442, -32.8177)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.67804, 4.21583, -32.6685)
 
 [node name="Sala2" parent="." instance=ExtResource("5_hniuo")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.6012, 4.2508, 0.808759)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.63723, 4.21947, 0.68175)
 
 [node name="Lab1" parent="." instance=ExtResource("9_oiegp")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.8329, 4.18538, 16.9244)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.9671, 4.18984, 16.9115)
 
 [node name="birch_tree2" parent="." instance=ExtResource("5_owcb7")]
 transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 17.0939, 0.89477, -12.836)
@@ -108,12 +106,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81725, 0.868089, -2.30409)
 [node name="chao" type="CSGBox3D" parent="corredor"]
 size = Vector3(5.031, 0.212, 65)
 material = SubResource("StandardMaterial3D_ypxq3")
-
-[node name="parede1" type="CSGBox3D" parent="corredor"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.44004, 2.78188, 0.0488293)
-visible = false
-size = Vector3(65, 5.32201, 0.118)
-material = SubResource("StandardMaterial3D_spy6c")
 
 [node name="parede2" type="CSGBox3D" parent="corredor"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.44091, 2.59546, 0.0488293)
@@ -126,34 +118,64 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.34791, 0)
 size = Vector3(5.031, 0.212, 65)
 
 [node name="Luminaria" type="CSGBox3D" parent="corredor/teto"]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.100392, -0.143398, 5.46072)
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.100223, -0.185838, 22.8418)
 size = Vector3(0.073234, 1, 1)
 
 [node name="Lamp" parent="corredor/teto/Luminaria" instance=ExtResource("5_mbcm1")]
-transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.471201, -0.0132341, -0.0186667)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="corredor/teto/Luminaria/Lamp"]
-transform = Transform3D(6.66667, 2.76854e-20, 3.38813e-21, 2.01948e-28, 6.66667, 5.68434e-14, -3.38813e-21, -5.68434e-14, 6.66667, 0, 3.78884, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="corredor/teto/Luminaria/Lamp"]
+transform = Transform3D(0.950859, -6.59851, 2.20263e-07, 2.20263e-07, -1.90798e-07, -6.66667, 6.59851, 0.950859, 1.90798e-07, 0, 7.62939e-06, 14.8309)
+light_energy = 3.879
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.56
+spot_range = 8.18137
+spot_angle = 89.99
 
 [node name="Luminaria2" type="CSGBox3D" parent="corredor/teto"]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.100223, -0.146291, -8.07138)
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.100223, -0.185838, 22.8418)
 size = Vector3(0.073234, 1, 1)
 
 [node name="Lamp" parent="corredor/teto/Luminaria2" instance=ExtResource("5_mbcm1")]
-transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.471201, -0.0132341, -0.0186667)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="corredor/teto/Luminaria2/Lamp"]
-transform = Transform3D(6.66667, 2.76854e-20, 3.38813e-21, 2.01948e-28, 6.66667, 5.68434e-14, -3.38813e-21, -5.68434e-14, 6.66667, 0, 3.78884, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="corredor/teto/Luminaria2/Lamp"]
+transform = Transform3D(0.950859, -6.59851, 2.20263e-07, 2.20263e-07, -1.90798e-07, -6.66667, 6.59851, 0.950859, 1.90798e-07, 0, 7.62939e-06, 14.8309)
+light_energy = 3.879
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.56
+spot_range = 8.18137
+spot_angle = 89.99
 
 [node name="Luminaria3" type="CSGBox3D" parent="corredor/teto"]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.100223, -0.13833, 16.9453)
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.100223, -0.185838, 4.2439)
 size = Vector3(0.073234, 1, 1)
 
 [node name="Lamp" parent="corredor/teto/Luminaria3" instance=ExtResource("5_mbcm1")]
-transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.471201, -0.0132341, -0.0186667)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="corredor/teto/Luminaria3/Lamp"]
-transform = Transform3D(6.66667, 2.76854e-20, 6.77626e-21, 4.03897e-28, 6.66667, 5.68434e-14, -6.77626e-21, -5.68434e-14, 6.66667, 0, 23.9555, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="corredor/teto/Luminaria3/Lamp"]
+transform = Transform3D(0.950859, -6.59851, 2.20263e-07, 2.20263e-07, -1.90798e-07, -6.66667, 6.59851, 0.950859, 1.90798e-07, 0, 7.62939e-06, 14.8309)
+light_energy = 3.879
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.56
+spot_range = 8.18137
+spot_angle = 89.99
+
+[node name="Luminaria4" type="CSGBox3D" parent="corredor/teto"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.100223, -0.185838, -10.8988)
+size = Vector3(0.073234, 1, 1)
+
+[node name="Lamp" parent="corredor/teto/Luminaria4" instance=ExtResource("5_mbcm1")]
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.471201, -0.0132341, -0.0186667)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="corredor/teto/Luminaria4/Lamp"]
+transform = Transform3D(0.950859, -6.59851, 2.20263e-07, 2.20263e-07, -1.90798e-07, -6.66667, 6.59851, 0.950859, 1.90798e-07, 0, 7.62939e-06, 14.8309)
+light_energy = 3.879
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.56
+spot_range = 8.18137
+spot_angle = 89.99
 
 [node name="ponta1" type="CSGBox3D" parent="corredor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0759053, 2.82099, 31.8312)
@@ -161,16 +183,6 @@ size = Vector3(5, 5.322, 1)
 material = SubResource("StandardMaterial3D_jtqfg")
 
 [node name="ponta2" type="CSGBox3D" parent="corredor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0234075, 2.72031, -30.7682)
-size = Vector3(5, 5.322, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0234075, 2.72031, -30.5387)
+size = Vector3(5.17233, 5.322, 1)
 material = SubResource("StandardMaterial3D_qnw3t")
-
-[node name="Luminaria2" type="CSGBox3D" parent="."]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -4.55812, 6.06638, -20.7127)
-size = Vector3(0.073234, 1, 1)
-
-[node name="Lamp" parent="Luminaria2" instance=ExtResource("5_mbcm1")]
-transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Luminaria2/Lamp"]
-transform = Transform3D(6.66667, 2.76854e-20, 3.38813e-21, 2.01948e-28, 6.66667, 5.68434e-14, -3.38813e-21, -5.68434e-14, 6.66667, 0, 3.78884, 0)

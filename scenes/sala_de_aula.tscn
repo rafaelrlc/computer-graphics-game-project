@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dus388ti374ak"]
+[gd_scene load_steps=30 format=3 uid="uid://dus388ti374ak"]
 
 [ext_resource type="Texture2D" uid="uid://dlq6a7ht43of" path="res://textures/gray-wall-textures-background.jpg" id="1_bvevu"]
 [ext_resource type="PackedScene" uid="uid://ceyllv1jeku8r" path="res://scenes/ar_condicionado.tscn" id="2_1mdwf"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d1f6j1y6esuu0" path="res://textures/branco_brilha.jpg" id="9_36frm"]
 [ext_resource type="PackedScene" uid="uid://qq3ranwykr0e" path="res://MacBookPro_blend.glb" id="9_phn75"]
 [ext_resource type="PackedScene" uid="uid://bq8y7piafu6gy" path="res://chair_finish.tscn" id="10_wm37a"]
+[ext_resource type="PackedScene" uid="uid://bl2mfhfst5k6s" path="res://luminaria.tscn" id="12_ew0h2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bw1k3"]
 albedo_texture = ExtResource("1_bvevu")
@@ -19,7 +20,7 @@ albedo_texture = ExtResource("1_bvevu")
 albedo_texture = ExtResource("1_bvevu")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajlki"]
-albedo_texture = ExtResource("2_x3qie")
+albedo_texture = ExtResource("1_bvevu")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80lo2"]
 albedo_texture = ExtResource("1_bvevu")
@@ -43,6 +44,10 @@ albedo_texture = ExtResource("1_bvevu")
 albedo_texture = ExtResource("1_bvevu")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b153s"]
+metallic = 0.1
+roughness = 0.44
+emission = Color(0.933333, 0.933333, 0.933333, 1)
+emission_energy_multiplier = 0.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lpdy"]
 albedo_color = Color(0.752941, 0.752941, 0.752941, 1)
@@ -79,9 +84,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19721, 0)
 [node name="Paredes" type="Node3D" parent="."]
 
 [node name="Sala de Aula" type="CSGBox3D" parent="Paredes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0193402, -0.378696, 0.072834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29959, -0.363481, 0.0755138)
 use_collision = true
-size = Vector3(15.8802, 5.58629, 0.5)
+size = Vector3(16.0129, 5.89686, 0.5)
 material = SubResource("StandardMaterial3D_bw1k3")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Paredes"]
@@ -89,7 +94,7 @@ material = SubResource("StandardMaterial3D_bw1k3")
 [node name="Sala de Aula3" type="CSGBox3D" parent="Paredes/CSGCombiner3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.73031, -0.415333, 8.2617)
 use_collision = true
-size = Vector3(16, 5.5, 0.5)
+size = Vector3(16.9952, 5.5, 0.5)
 material = SubResource("StandardMaterial3D_d4sg5")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Paredes/CSGCombiner3D"]
@@ -129,9 +134,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.2932, 0.106838, 122.252)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.091, 0.0736084, 163.117)
 
 [node name="Sala de Aula2" type="CSGBox3D" parent="Paredes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0370359, -0.404956, 16.5252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374961, -0.414963, 16.5095)
 use_collision = true
-size = Vector3(16, 5.54651, 0.5)
+size = Vector3(15.9407, 5.54651, 0.5)
 material = SubResource("StandardMaterial3D_flqf4")
 
 [node name="ar-condicionado" parent="Paredes/Sala de Aula2" instance=ExtResource("2_1mdwf")]
@@ -163,10 +168,15 @@ transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114
 size = Vector3(0.073234, 1, 1)
 
 [node name="Lamp" parent="Teto/Luminaria" instance=ExtResource("2_o0wtd")]
-transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.471201, -0.0132341, -0.0186667)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Teto/Luminaria/Lamp"]
-transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="Teto/Luminaria/Lamp"]
+transform = Transform3D(0.950859, -6.59851, 2.20263e-07, 2.20263e-07, -1.90798e-07, -6.66667, 6.59851, 0.950859, 1.90798e-07, 0, 0, 0)
+light_energy = 7.776
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.56
+spot_range = 12.2487
+spot_angle = 83.9947
 
 [node name="Quadro" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138636, -0.379654, 0.344803)
@@ -352,3 +362,7 @@ transform = Transform3D(-0.401948, 0, -0.915663, 0, 1, 0, 0.915663, 0, -0.401948
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142627, -0.627924, -0.01386)
 size = Vector3(0.0931174, 0.208227, 0.830895)
 material = SubResource("StandardMaterial3D_8v2vy")
+
+[node name="luminaria" parent="." instance=ExtResource("12_ew0h2")]
+transform = Transform3D(1.04753, -0.308304, 0.497632, 0.33881, 1.15118, -4.18544e-16, -0.477385, 0.140502, 1.09195, 6.62545, -1.86904, 2.55693)
+visible = false
