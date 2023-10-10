@@ -185,7 +185,6 @@ size = Vector3(0.073234, 1, 1)
 
 [node name="Lamp" parent="teto/Luminaria" instance=ExtResource("3_mhv3s")]
 transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
-visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria/Lamp"]
 transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
@@ -212,16 +211,6 @@ transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-
 [node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria3/Lamp"]
 transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
 
-[node name="Luminaria" type="CSGBox3D" parent="teto/Luminaria3"]
-transform = Transform3D(-1.66099e-11, 4.36375e-08, 1, 0.0115015, 0.999934, -4.33967e-08, -0.999934, 0.0115015, -5.02746e-10, 0.100223, -0.598381, 0.53544)
-size = Vector3(0.073234, 1, 1)
-
-[node name="Lamp" parent="teto/Luminaria3/Luminaria" instance=ExtResource("3_mhv3s")]
-transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria3/Luminaria/Lamp"]
-transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
-
 [node name="Luminaria4" type="CSGBox3D" parent="teto"]
 transform = Transform3D(-4.32058e-08, 4.42084e-08, 1, 0.0115015, 0.999934, -4.37085e-08, -0.999934, 0.0115015, -4.37114e-08, -10.2648, 0.0137005, 0.53544)
 size = Vector3(0.073234, 1, 1)
@@ -230,6 +219,52 @@ size = Vector3(0.073234, 1, 1)
 transform = Transform3D(2.72384e-16, -0.15, 6.56236e-09, 6.55671e-09, -6.53784e-09, -0.15, 0.15, 1.38473e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186663)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria4/Lamp"]
+transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
+
+[node name="Luminaria5" type="CSGBox3D" parent="teto"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 0.0115015, 0.999934, -4.37085e-08, -0.999934, 0.0115015, -5.02746e-10, -3.83576, 5.20624, 0.636348)
+size = Vector3(0.073234, 1, 1)
+
+[node name="Lamp" parent="teto/Luminaria5" instance=ExtResource("3_mhv3s")]
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria5/Lamp"]
+transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="teto/Luminaria5/Lamp"]
+transform = Transform3D(6.66667, -2.86276e-17, 3.63749e-16, 3.63749e-16, 1.0429, -6.58459, -2.86276e-17, 6.58459, 1.0429, 0, 0, 0)
+visible = false
+light_energy = 11.556
+spot_angle = 35.9473
+
+[node name="Luminaria6" type="CSGBox3D" parent="teto"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 0.0115015, 0.999934, -4.37085e-08, -0.999934, 0.0115015, -5.02746e-10, 10.3753, 5.20624, 0.636348)
+size = Vector3(0.073234, 1, 1)
+
+[node name="Lamp" parent="teto/Luminaria6" instance=ExtResource("3_mhv3s")]
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria6/Lamp"]
+transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
+
+[node name="Luminaria7" type="CSGBox3D" parent="teto"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 0.0115015, 0.999934, -4.37085e-08, -0.999934, 0.0115015, -5.02746e-10, -3.83576, 5.20624, 0.636348)
+size = Vector3(0.073234, 1, 1)
+
+[node name="Lamp" parent="teto/Luminaria7" instance=ExtResource("3_mhv3s")]
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria7/Lamp"]
+transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
+
+[node name="Luminaria8" type="CSGBox3D" parent="teto"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 0.0115015, 0.999934, -4.37085e-08, -0.999934, 0.0115015, -5.02746e-10, 0.187298, 5.20624, 0.636348)
+size = Vector3(0.073234, 1, 1)
+
+[node name="Lamp" parent="teto/Luminaria8" instance=ExtResource("3_mhv3s")]
+transform = Transform3D(2.86603e-16, -0.15, 6.55669e-09, 6.55671e-09, -6.55669e-09, -0.15, 0.15, 5.73205e-16, 6.55671e-09, 0.25754, -0.0132341, -0.0186667)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto/Luminaria8/Lamp"]
 transform = Transform3D(6.66667, 2.76854e-20, 8.47033e-21, 4.03897e-28, 6.66667, 5.68434e-14, -8.47033e-21, -5.68434e-14, 6.66667, 0, 7.6832, 0)
 
 [node name="Mesas" type="Node3D" parent="."]
